@@ -1,10 +1,12 @@
 $(document).ready(function() {
+  // Función para convertir a mayusculas
   const isCapital = (text) => {
     return text === text.toUpperCase();
   };
 
+  // Función para comprobar números
   const isNumber = (text) => {
-    var cont = true;
+    let cont = true;
     for (let i = 0, len = text.length; i < len; i++) {
       if (isNaN(text[i]) === false) {
         cont = false;
@@ -14,43 +16,45 @@ $(document).ready(function() {
     return cont;
   }; 
 
-  $('#encriptar').click(function() {
-    var palabra = $('#palabra').val().trim();
-    if (palabra.length !== 0 && isNumber(palabra)) {
-      var palabraEncriptada = '', posicion, caracterEncriptado;
-      for (let i = 0, len = palabra.length; i < len; i++) {
-        let codigoAscci = palabra.charCodeAt(i);
-        if (isCapital(palabra)) {
-          posicion = ((codigoAscci - 65 + 33) % 26 + 65);
+  // Capturamos el boton para cifrar
+  $('#btn-cif').click(function() {
+    let input = $('#input-cif').val().trim();
+    if (input.length !== 0 && isNumber(input)) {
+      let stringEncripted = '', position, characterEncripted;
+      for (let i = 0, len = input.length; i < len; i++) {
+        let codAscci = input.charCodeAt(i);
+        if (isCapital(input)) {
+          position = ((codAscci - 65 + 33) % 26 + 65);
         } else {
-          posicion = ((codigoAscci - 97 + 33) % 26 + 97);
+          position = ((codAscci - 97 + 33) % 26 + 97);
         }
-        caracterEncriptado = String.fromCharCode(posicion);
-        palabraEncriptada += caracterEncriptado;
+        characterEncripted = String.fromCharCode(position);
+        stringEncripted += characterEncripted;
       }
-      $('#resultado').text('La palabra encriptada es : ' + palabraEncriptada);
+      $('#result').text('La palabra encriptada es : ' + stringEncripted);
     } else {
-      alert('Ingresar palabra de forma correcta');
+      alert('No estas ingresando una cadena, no ingreses campos vacíos ni números');
     }
   });
 
-  $('#desencriptar').click(function() {
-    var palabra = $('#palabra').val().trim();
-    if (palabra.length !== 0 && isNumber(palabra)) {
-      var palabraDes = '', posicion, caracterDes;
-      for (let i = 0, len = palabra.length; i < len; i++) {
-        let codigoAscci = palabra.charCodeAt(i);
-        if (isCapital(palabra)) {
-          posicion = (codigoAscci - 65 - 33 % 26 + 65);
+  // capturamos el boton para decifrar
+  $('#btn-decif').click(function() {
+    var input = $('#input-cif').val().trim();
+    if (input.length !== 0 && isNumber(input)) {
+      var stringDescripted = '', position, caracterDes;
+      for (let i = 0, len = input.length; i < len; i++) {
+        let codAscci = input.charCodeAt(i);
+        if (isCapital(input)) {
+          position = (codAscci - 65 - 33 % 26 + 65);
         } else {
-          posicion = (codigoAscci - 97 - 33 % 26 + 97);
+          position = (codAscci - 97 - 33 % 26 + 97);
         }
-        caracterDes = String.fromCharCode(posicion);
-        palabraDes += caracterDes;
+        caracterDes = String.fromCharCode(position);
+        stringDescripted += caracterDes;
       }
-      $('#resultado').text('La palabra desencriptada es : ' + palabraDes);
+      $('#result').text('La palabra desencriptada es : ' + stringDescripted);
     } else {
-      alert('Ingresar palabra de forma correcta');
+      alert('No estas ingresando una cadena, no ingreses campos vacíos ni números');
     }
   });
 });
