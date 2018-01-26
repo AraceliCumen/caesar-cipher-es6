@@ -22,8 +22,9 @@
         <div class="input-field col s12">
           <input placeholder="ABC" id="input-cifrado" type="text" class="validate">
           <label class="active" for="first_name2">Ingresa palabra:</label>
-          <a class="waves-effect waves-light btn modal-trigger" id="btn-cif" href="#modalcif">Cifrar</a>
-          <a class="waves-effect waves-light btn modal-trigger" id="btn-decif" href="#modalcif" >Desifrar</a>
+          <a class="waves-effect waves-light btn modal-trigger" id="btn-cif" >Cifrar</a>
+          <a class="waves-effect waves-light btn modal-trigger" id="btn-decif" >Desifrar</a>
+          <p id="result"></p>
         </div>
       </div>
     </div>
@@ -36,8 +37,7 @@
         <form class="col s12">
           <div class="row">
             <div class="col s12 container-flex-column">
-              <h6>Tu texto Cifrado/ Descifrado es:</h6>
-              <p id="texto"></p>
+              <p id="error"></p>
             </div>
           </div>
         </form>
