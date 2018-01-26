@@ -43,7 +43,7 @@ $(document).ready(function() {
       }
       $('#result').text('La palabra encriptada es : ' + stringEncripted);
     } else {
-      alert('No estas ingresando una cadena, no ingreses campos vacíos ni números');
+      $('#error').text('No estas ingresando una cadena, no ingreses campos vacíos ni números');
     }
   };
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
       }
       $('#result').text('La palabra desencriptada es : ' + stringDescripted);
     } else {
-      alert('No estas ingresando una cadena, no ingreses campos vacíos ni números');
+      $('#error').text('No estas ingresando una cadena, no ingreses campos vacíos ni números');
     }
   };
 });
