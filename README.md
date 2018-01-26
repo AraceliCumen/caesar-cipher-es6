@@ -23,3 +23,4 @@ Se realizo el código JS con ES 6.
 
 ## Resultados
 
+![Resultados](assets/imgs/result.png)
