@@ -17,7 +17,17 @@ $(document).ready(function() {
   }; 
 
   // Capturamos el boton para cifrar
-  $('#btn-cif').click(function() {
+  $('#btn-cif').click(() => {
+    chiper();
+  });
+
+  // capturamos el boton para decifrar
+  $('#btn-decif').click(() => {
+    dechiper();
+  });
+
+  // función para encriptar
+  const chiper = () =>{
     let input = $('#input-cif').val().trim();
     if (input.length !== 0 && isNumber(input)) {
       let stringEncripted = '', position, characterEncripted;
@@ -35,10 +45,10 @@ $(document).ready(function() {
     } else {
       alert('No estas ingresando una cadena, no ingreses campos vacíos ni números');
     }
-  });
+  };
 
-  // capturamos el boton para decifrar
-  $('#btn-decif').click(function() {
+  // función para desencriptar
+  const dechiper = () =>{
     var input = $('#input-cif').val().trim();
     if (input.length !== 0 && isNumber(input)) {
       var stringDescripted = '', position, caracterDes;
@@ -56,5 +66,5 @@ $(document).ready(function() {
     } else {
       alert('No estas ingresando una cadena, no ingreses campos vacíos ni números');
     }
-  });
+  };
 });
