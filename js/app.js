@@ -1,8 +1,7 @@
 $(document).ready(function() {
   // Función para convertir a mayusculas
-  const isCapital = (text) => {
-    return text === text.toUpperCase();
-  };
+  const isCapital = text => text === text.toUpperCase();
+  
 
   // Función para comprobar números
   const isNumber = (text) => {
