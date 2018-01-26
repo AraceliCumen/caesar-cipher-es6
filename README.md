@@ -11,8 +11,15 @@
 * Tu código debe estar compuesto por 2 funciones con los siguientes nombres: cipher y decipher
 * El usuario no debe poder ingresar un campo vacío o que contenga números
 
+## Procedimiento
+
+Se realizo el código JS con ES 6.
+
 ## Herramientas Utilizadas
 
 1. ES6
 2. jQuery
 3. Materialize
+
+## Resultados
+
